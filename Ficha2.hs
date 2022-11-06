@@ -51,9 +51,6 @@ nosPrimeiros _ [] = False
 nosPrimeiros c ((p,s):t) = if c == p then True else nosPrimeiros c t
 
 --Exercício 2.i
---Porque nao pode ser sumTriplos ((x,y,z):xs) = (x + sumTriplos xs, y + sumTriplos xs, z + sumTriplos xs)
---Em vez de estar a escrever o where
---Porque nao pode ser sumTriplos [] = []
 
 sumTriplos :: (Num a, Num b, Num c) => [(a,b,c)] -> (a,b,c)
 sumTriplos [(x,y,z)] = (x,y,z)
@@ -125,7 +122,7 @@ mult _ [] = []
 mult (c1,g1) ((c2,g2):t) = (c1 * c2, g1 + g2): mult (c1,g1) t
 
 --Exercício 4.h
---Nao percebi perfeitamente, tenho de ver melhor depois a parte do Aux then (cm + gp, gm):xs porque é xs e nao normalizaAux xs
+
 normaliza :: Polinomio -> Polinomio
 normaliza [] = []
 normaliza ((c,g):xs) = normalizaAux (c,g) (normaliza xs)
